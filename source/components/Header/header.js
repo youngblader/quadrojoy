@@ -4,8 +4,8 @@ import { Platform, StyleSheet, Text, View, Image } from 'react-native';
 const Header = () => {
     return (
         <View style={styles.header}>
-        <Text style={styles.header__title}>Quadrojoy</Text>
-        <Image style={styles.header__menu} source={require('../../images/menu.png')}/>
+            <Text style={styles.header__title}>Quadrojoy</Text>
+            <Image style={styles.header__menu} source={require('../../images/menu.png')}/>
         </View>
     );
 }
