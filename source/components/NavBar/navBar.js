@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         right: 0,
         left: 0,
         width: 'auto',
-        height: (Platform.OS === 'ios') ? 96 : 58,
+        height: (Platform.OS === 'ios') ? 58 : 96,
         shadowColor: "#000",
         shadowOpacity: 0.16,
         shadowRadius: 3,
@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
         elevation: 2,
         borderTopRightRadius: 12,
         borderTopLeftRadius: 12,
-        backgroundColor: (Platform.OS === 'ios') ? '#FFFFFF' : 'none',
+        backgroundColor: (Platform.OS === 'ios') ? '#FFFFFF' : 'transparent',
     },
     navBar: {
         justifyContent: 'center',
         alignItems: 'center',
-        height: (Platform.OS === 'ios') ? 96 : 58,
+        height: (Platform.OS === 'ios') ? 58 : 96,
     },
     navBar__list: {
         justifyContent: 'space-between',

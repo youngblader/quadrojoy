@@ -53,12 +53,12 @@ const Products = () => {
 const styles = StyleSheet.create({
     products__wrapper: {   
         marginTop: 28,
-        marginLeft: (Platform.OS === 'ios') ? 10 : 0,
+        marginLeft: (Platform.OS === 'ios') ? 0 : 10,
         width: 644,
         backgroundColor: '#FFF'
     },
     products__content: {
-        alignItems: 'flex-center',
+        alignItems: 'flex-start',
         flexDirection: "column",
         width: 345,
     },
