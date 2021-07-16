@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
-import { Platform, Modal, StyleSheet, View, Text, Pressable, Image, SafeAreaView, TextInput } from 'react-native';
+import { Platform, Modal, StyleSheet, View, Text, Pressable, Image, SafeAreaView, TextInput, ScrollView } from 'react-native';
 
 const SelectedItemScreen = () => {
 
@@ -15,6 +15,7 @@ const SelectedItemScreen = () => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.selected__container}>
               <View style={styles.selected__header}>
                   <Pressable onPress={() => navigation.goBack('Home')}>
@@ -79,6 +80,7 @@ const SelectedItemScreen = () => {
                   </View>
               </Modal>
           </View>
+        </ScrollView>
     );
 }
 
