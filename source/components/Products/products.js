@@ -27,8 +27,13 @@ const Products = () => {
                 <View style={styles.products__header}>
                     <Text style={styles.products__title}>{activeItem} Quadcopters</Text>
                 </View>
-                <ScrollView horizontal={data.length < 2 ? false : true} showsHorizontalScrollIndicator={false}
-                alwaysBounceHorizontal={true} alwaysBounceVertical={false} directionalLockEnabled={true}>
+                <ScrollView 
+                    horizontal={data.length < 2 ? false : true} 
+                    showsHorizontalScrollIndicator={false}
+                    alwaysBounceHorizontal={true} 
+                    alwaysBounceVertical={false}
+                    directionalLockEnabled={true}
+                >
                     <View style={styles.products__list}>
                         {data.map((item) => {
                             return (
