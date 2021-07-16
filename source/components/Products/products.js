@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { actionTypes } from '../../actions/actionTypes';
 import { Card } from '../Card/card';
 
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Platform, StyleSheet, Text, View, ScrollView } from 'react-native';
 
 import { products } from '../../data/products.json';
 
@@ -27,7 +27,7 @@ const Products = () => {
                 <View style={styles.products__header}>
                     <Text style={styles.products__title}>{activeItem} Quadcopters</Text>
                 </View>
-                <ScrollView horizontal={data.length < 2 ? false : true} showsHorizontalScrollIndicator={false} 
+                <ScrollView horizontal={data.length < 2 ? false : true} showsHorizontalScrollIndicator={false}
                 alwaysBounceHorizontal={true} alwaysBounceVertical={false} directionalLockEnabled={true}>
                     <View style={styles.products__list}>
                         {data.map((item) => {
@@ -53,12 +53,12 @@ const Products = () => {
 const styles = StyleSheet.create({
     products__wrapper: {   
         marginTop: 28,
-        marginLeft: 16,
+        marginLeft: (Platform.OS === 'ios') ? 10 : 0,
         width: 644,
         backgroundColor: '#FFF'
     },
     products__content: {
-        alignItems: 'center',
+        alignItems: 'flex-center',
         flexDirection: "column",
         width: 345,
     },
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         alignSelf: "flex-start",
         marginTop: 21,
         paddingLeft: 10,
-        width: 654,
+        width: 'auto',
     },
 });
 

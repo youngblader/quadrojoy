@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Platform, StyleSheet, Text, View, Image } from 'react-native';
 
 const Header = () => {
     return (
         <View style={styles.header}>
-            <Text style={styles.header__title}>Quadrojoy</Text>
-            <Image style={styles.header__menu} source={require('../../images/menu.png')}/>
+        <Text style={styles.header__title}>Quadrojoy</Text>
+        <Image style={styles.header__menu} source={require('../../images/menu.png')}/>
         </View>
     );
 }
@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 42,
+        marginTop: (Platform.OS === 'ios') ? 42 : 32,
         width: 375,
         height: 42,
     },
         header__title: {
-        marginLeft: 25,
+        marginLeft: (Platform.OS === 'ios') ? 25 : 25,
         fontFamily: 'Lato-ExtraBold',
         fontWeight: '800',
         fontStyle: 'normal',
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         color: "#1F1F1F",
     },
     header__menu: {
-        marginRight: 15,
+        marginRight: (Platform.OS === 'ios') ? 15 : 20,
         width: 28,
         height: 28,
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Pressable, Image } from 'react-native';
+import { Platform, StyleSheet, View, Pressable, Image } from 'react-native';
 import { ROUTES } from '../../routes/navRoutes';
 import { useNavigation } from '@react-navigation/native';
 
@@ -12,38 +12,48 @@ const NavBar = () => {
     }
 
     return (
-        <View style={styles.navBar}>
-            <View style={styles.navBar__list}>
-                {ROUTES.map((item) => {
-                    return (
-                        <View key={item.name}>
-                            <Pressable onPress={() => loadScreen(`${item.name}`)}>
-                                <Image  style={styles.navBar__image} source={{uri: `${item.picture}`}}/>
-                            </Pressable>
-                        </View>
-                    )
-                })}
+        <View style={styles.navBar__wrapper}>
+            <View style={styles.navBar}>
+                <View style={styles.navBar__list}>
+                    {ROUTES.map((item) => {
+                        return (
+                            <View key={item.name}>
+                                <Pressable onPress={() => loadScreen(`${item.name}`)}>
+                                    <Image  style={styles.navBar__image} source={{uri: `${item.picture}`}}/>
+                                </Pressable>
+                            </View>
+                        )
+                    })}
+                </View>
             </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    navBar__wrapper: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        left: 0,
+        width: 'auto',
+        height: (Platform.OS === 'ios') ? 96 : 58,
+        shadowColor: "#000",
+        shadowOpacity: 0.16,
+        shadowRadius: 3,
+        shadowOffset:{
+            width: 0,
+            height: -2,
+          },
+        elevation: 2,
+        borderTopRightRadius: 12,
+        borderTopLeftRadius: 12,
+        backgroundColor: (Platform.OS === 'ios') ? '#FFFFFF' : 'none',
+    },
     navBar: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 28,
-        width: 395,
-        height: 96, 
-        borderTopRightRadius: 12,
-        borderTopLeftRadius: 12,
-        shadowColor: "#000",
-        shadowOffset:{
-            width: 0,
-            height: 6,
-        },
-        shadowOpacity: 1.0, 
-        elevation: 2,
+        height: (Platform.OS === 'ios') ? 96 : 58,
     },
     navBar__list: {
         justifyContent: 'space-between',

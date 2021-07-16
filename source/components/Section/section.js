@@ -33,6 +33,14 @@ const styles = StyleSheet.create({
         height: 164,
         backgroundColor: '#317AE8',
         borderRadius: 20,
+        shadowColor: "#000",
+        shadowOpacity: 0.20,
+        shadowRadius: 15,
+        shadowOffset:{
+            width: 0,
+            height: 5,
+        },
+        elevation: 2,
     },
     section__content: {
         zIndex: 5,
