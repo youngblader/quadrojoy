@@ -44,9 +44,8 @@ const Card = (props) => {
                     </View>
                     <View style={styles.card__footer}>
                         <Text style={styles.card__price}>{parseFloat(props.price).toFixed(2)} $</Text>
-                        <View  style={styles.card__star}>
-                            <Image                           
-                                source={require('../../images/star.png')}/>
+                        <View style={styles.card__star}>
+                            <Image source={require('../../images/star.png')}/>
                             <Text style={styles.card__rate}>{props.rate}</Text>
                         </View>
                     </View>

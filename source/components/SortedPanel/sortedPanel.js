@@ -64,24 +64,24 @@ const SortedPanel = () => {
     }
 
     return (
-      <View style={styles.sortedPanel__wrapper}>
-        <View style={styles.sortedPanel}>
-          <View style={styles.sortedPanel__list}>
-            <Pressable style={activeItem === 'All' ? styles.list__itemActive : styles.button} onPress={() => sortedItems('All')}>
-                <Text style={activeItem === 'All' ? styles.item__textActive : styles.item__text}>All</Text>
-            </Pressable>
-            <Pressable style={activeItem === 'Cheap' ? styles.list__itemActive : styles.button} onPress={() => sortedItems('Cheap')}>
-                <Text style={activeItem === 'Cheap' ? styles.item__textActive : styles.item__text}>Cheap</Text>
-            </Pressable>
-            <Pressable style={activeItem === 'Best' ? styles.list__itemActive : styles.button} onPress={() => sortedItems('Best')}>
-                <Text style={activeItem === 'Best' ? styles.item__textActive : styles.item__text}>Best</Text>
-            </Pressable>
-            <Pressable style={activeItem === 'Fast' ? styles.list__itemActive : styles.button} onPress={() => sortedItems('Fast')}>
-                <Text style={activeItem === 'Fast' ? styles.item__textActive : styles.item__text}>Fast</Text>
-            </Pressable>
-          </View>
+        <View style={styles.sortedPanel__wrapper}>
+            <View style={styles.sortedPanel}>
+                <View style={styles.sortedPanel__list}>
+                    <Pressable style={activeItem === 'All' ? styles.list__itemActive : styles.button} onPress={() => sortedItems('All')}>
+                        <Text style={activeItem === 'All' ? styles.item__textActive : styles.item__text}>All</Text>
+                    </Pressable>
+                    <Pressable style={activeItem === 'Cheap' ? styles.list__itemActive : styles.button} onPress={() => sortedItems('Cheap')}>
+                        <Text style={activeItem === 'Cheap' ? styles.item__textActive : styles.item__text}>Cheap</Text>
+                    </Pressable>
+                    <Pressable style={activeItem === 'Best' ? styles.list__itemActive : styles.button} onPress={() => sortedItems('Best')}>
+                        <Text style={activeItem === 'Best' ? styles.item__textActive : styles.item__text}>Best</Text>
+                    </Pressable>
+                    <Pressable style={activeItem === 'Fast' ? styles.list__itemActive : styles.button} onPress={() => sortedItems('Fast')}>
+                        <Text style={activeItem === 'Fast' ? styles.item__textActive : styles.item__text}>Fast</Text>
+                    </Pressable>
+                </View>
+            </View>
         </View>
-      </View>
     );
 }
 

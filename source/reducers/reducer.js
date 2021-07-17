@@ -10,26 +10,25 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     
     case actionTypes.GET_PRODUCTS: {
-      return {
-        ...state,
-        data: action.payload
-      }
+        return {
+            ...state,
+            data: action.payload
+        }
     }
 
     case actionTypes.CHANGE_TITLE: {
-      return {
-        ...state,
-        activeItem: action.payload
-      }
+        return {
+            ...state,
+            activeItem: action.payload
+        }
     }
 
     case actionTypes.SELECTED_ITEM: {
-      return {
-        ...state,
-        selectedItem: action.payload
-      }
+        return {
+            ...state,
+            selectedItem: action.payload
+        }
     }
-
     default: return state;
   } 
 }

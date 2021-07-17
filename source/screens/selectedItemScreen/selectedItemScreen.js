@@ -16,70 +16,67 @@ const SelectedItemScreen = () => {
 
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.selected__container}>
-              <View style={styles.selected__header}>
-                  <Pressable onPress={() => navigation.goBack('Home')}>
-                      <Image source={require('../../images/arrow.png')}/>
-                  </Pressable>
-              </View>
-              <View style={styles.selected__item}>
-                  {selectedItem.map((item) => {
-                      return (
-                          <View key={item.id}>
-                              <Image style={styles.selected__image} source={{uri: `${item.picture}`}} />
-                              <View style={styles.selected__content}>
-                                  <Text style={styles.item__type}>{item.type}</Text>
-                                  <Text style={styles.item__name}>{item.name}</Text>
-                                  <Text style={styles.item__price}>{parseFloat(item.price).toFixed(2)} $</Text>
-                                  <Text style={styles.item__description}>{item.description}</Text>
-                              </View>
+            <View style={styles.selected__container}>
+                <View style={styles.selected__header}>
+                    <Pressable onPress={() => navigation.goBack('Home')}>
+                        <Image source={require('../../images/arrow.png')}/>
+                    </Pressable>
+                </View>
+                <View style={styles.selected__item}>
+                    {selectedItem.map((item) => {
+                        return (
+                            <View key={item.id}>
+                                <Image style={styles.selected__image} source={{uri: `${item.picture}`}} />
+                                <View style={styles.selected__content}>
+                                    <Text style={styles.item__type}>{item.type}</Text>
+                                    <Text style={styles.item__name}>{item.name}</Text>
+                                    <Text style={styles.item__price}>{parseFloat(item.price).toFixed(2)} $</Text>
+                                    <Text style={styles.item__description}>{item.description}</Text>
+                                </View>
                           </View>
-                      )
-                  })}
-              </View>
-              <View style={styles.contact__info}>
-                  <SafeAreaView>
-                      <TextInput
-                          style={styles.input}
-                          onChangeText={setUserName}
-                          value={userName}
-                          placeholder="Name"
-                      />
-                      
-                      <TextInput
-                          style={styles.input}
-                          onChangeText={setUserPhone}
-                          value={userPhone}
-                          placeholder="+375 (__)___-__-__"
-                          keyboardType='phone-pad'
-                      />
-                  </SafeAreaView>
-              </View>
-              <Pressable onPress={() => setModalVisible(true)}>
-                  <View style={styles.contact__btn}> 
-                      <Text style={styles.contact__text}>To Order</Text>
-                  </View>
-              </Pressable>
-              
-              <Modal
-                  animationType="slide"
-                  transparent={true}
-                  visible={modalVisible}
-                  onRequestClose={() => setModalVisible(!modalVisible)}>
-                  <View style={styles.modal__wrapper}>
-                      <View style={styles.modal}>
-                          <Image style={styles.modal__image} source={require('../../images/car.png')}/>
-                          <Text style={styles.modal__title}>Your order is accepted</Text>
-                      
-                          <Pressable onPress={() => setModalVisible(!modalVisible)}>    
-                              <View style={styles.modal__btn}>
-                                  <Text style={styles.modal__text}>Ok</Text>
-                              </View>
-                          </Pressable>
-                      </View>
-                  </View>
-              </Modal>
-          </View>
+                        )
+                    })}
+                </View>
+                <View style={styles.contact__info}>
+                    <SafeAreaView>
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={setUserName}
+                            value={userName}
+                            placeholder="Name"
+                        />
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={setUserPhone}
+                            value={userPhone}
+                            placeholder="+375 (__)___-__-__"
+                            keyboardType='phone-pad'
+                        />
+                    </SafeAreaView>
+                </View>
+                <Pressable onPress={() => setModalVisible(true)}>
+                    <View style={styles.contact__btn}> 
+                        <Text style={styles.contact__text}>To Order</Text>
+                    </View>
+                </Pressable>     
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+                    onRequestClose={() => setModalVisible(!modalVisible)}>
+                    <View style={styles.modal__wrapper}>
+                        <View style={styles.modal}>
+                            <Image style={styles.modal__image} source={require('../../images/car.png')}/>
+                            <Text style={styles.modal__title}>Your order is accepted</Text>                  
+                            <Pressable onPress={() => setModalVisible(!modalVisible)}>    
+                                <View style={styles.modal__btn}>
+                                    <Text style={styles.modal__text}>Ok</Text>
+                                </View>
+                            </Pressable>
+                        </View>
+                    </View>
+                </Modal>
+            </View>
         </ScrollView>
     );
 }

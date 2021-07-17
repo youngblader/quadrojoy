@@ -7,13 +7,13 @@ const Section = () => {
         <View style={styles.section__wrapper}>
             <View style={styles.section}>
                 <View style={styles.section__content}>
-                <Text style={styles.section__title}>Need for Speed</Text>
-                <Text style={styles.section__name}>UdoDron 3 Pro</Text>
-                <Text style={styles.section__price}>1984 $</Text>
+                    <Text style={styles.section__title}>Need for Speed</Text>
+                    <Text style={styles.section__name}>UdoDron 3 Pro</Text>
+                    <Text style={styles.section__price}>1984 $</Text>
                 </View>
                 <Image 
-                style={styles.section__image} 
-                source={require('../../images/quadro-first.png')}
+                    style={styles.section__image} 
+                    source={require('../../images/quadro-first.png')}
                 />
             </View>
         </View>
