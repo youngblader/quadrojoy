@@ -25,7 +25,7 @@ When you are done configuring the emulator, you can launch the application
 cd quadrojoy / && expo start
 ```
 
-## Build with
+## Built with
  
 * [Expo](https://expo.io/)
 * [React-Native](https://reactnative.dev/)
